@@ -3,6 +3,7 @@
 	<PluginImplementation>
 		<interfaceClass>org.bimserver.plugins.modelchecker.ModelCheckerPlugin</interfaceClass>
 		<implementationClass>org.bimserver.javamodelchecker.JavaModelCheckerPlugin</implementationClass>
+		<description>Java Model Checker Plugin</description>
 		<enabled>true</enabled>
 	</PluginImplementation>
 </PluginDescriptor>

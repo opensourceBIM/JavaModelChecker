@@ -27,22 +27,15 @@ import org.bimserver.shared.exceptions.PluginException;
 
 public class JavaModelCheckerPlugin implements ModelCheckerPlugin {
 
-	private boolean initialized;
 	private PluginManagerInterface pluginManager;
 	
 	@Override
 	public void init(PluginManagerInterface pluginManager) throws PluginException {
 		this.pluginManager = pluginManager;
 		initExamples(pluginManager);
-		initialized = true;
 	}
 
 	private void initExamples(PluginManagerInterface pluginManager) {
-	}
-
-	@Override
-	public String getDescription() {
-		return "Java Model Checker Plugin";
 	}
 
 	@Override
@@ -51,18 +44,8 @@ public class JavaModelCheckerPlugin implements ModelCheckerPlugin {
 	}
 
 	@Override
-	public String getVersion() {
-		return "0.1";
-	}
-
-	@Override
 	public ObjectDefinition getSettingsDefinition() {
 		return null;
-	}
-
-	@Override
-	public boolean isInitialized() {
-		return initialized;
 	}
 	
 	@Override
