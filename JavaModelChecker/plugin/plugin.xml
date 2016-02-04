@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PluginDescriptor>
-	<PluginImplementation>
+	<JavaPlugin>
 		<interfaceClass>org.bimserver.plugins.modelchecker.ModelCheckerPlugin</interfaceClass>
 		<implementationClass>org.bimserver.javamodelchecker.JavaModelCheckerPlugin</implementationClass>
 		<description>Java Model Checker Plugin</description>
-		<enabled>true</enabled>
-	</PluginImplementation>
+		
+	</JavaPlugin>
 </PluginDescriptor>
