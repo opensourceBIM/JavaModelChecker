@@ -20,27 +20,21 @@ package org.bimserver.javamodelchecker;
 import org.bimserver.models.store.ObjectDefinition;
 import org.bimserver.plugins.PluginConfiguration;
 import org.bimserver.plugins.PluginContext;
-import org.bimserver.plugins.PluginManagerInterface;
 import org.bimserver.plugins.modelchecker.ModelChecker;
 import org.bimserver.plugins.modelchecker.ModelCheckerPlugin;
 import org.bimserver.shared.exceptions.PluginException;
 
 public class JavaModelCheckerPlugin implements ModelCheckerPlugin {
 
-	private PluginManagerInterface pluginManager;
-	
-	@Override
-	public void init(PluginManagerInterface pluginManager) throws PluginException {
-		this.pluginManager = pluginManager;
-		initExamples(pluginManager);
-	}
-
-	private void initExamples(PluginManagerInterface pluginManager) {
-	}
+	private PluginContext pluginContext;
 
 	@Override
-	public String getDefaultName() {
-		return "Java Model Checker Plugin";
+	public void init(PluginContext pluginContext) throws PluginException {
+		this.pluginContext = pluginContext;
+		initExamples(pluginContext);
+	}
+
+	private void initExamples(PluginContext pluginContext) {
 	}
 
 	@Override
@@ -50,7 +44,6 @@ public class JavaModelCheckerPlugin implements ModelCheckerPlugin {
 	
 	@Override
 	public ModelChecker createModelChecker(PluginConfiguration pluginConfiguration) {
-		PluginContext pluginContext = pluginManager.getPluginContext(this);
 		return new JavaModelChecker(pluginContext.getClassLoader(), pluginContext.getRootPath());
 	}
 }
