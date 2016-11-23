@@ -20,9 +20,13 @@ package org.bimserver.javamodelchecker;
 import org.bimserver.emf.IfcModelInterface;
 import org.bimserver.models.store.ModelCheckerResult;
 import org.bimserver.models.store.StoreFactory;
+import org.bimserver.plugins.modelchecker.ModelCheckException;
+import org.bimserver.plugins.modelchecker.ModelChecker;
 
-public class PassAlways implements JavaModelCheckerInterface {
-	public ModelCheckerResult check(IfcModelInterface model) {
+public class PassAlways implements ModelChecker {
+
+	@Override
+	public ModelCheckerResult check(IfcModelInterface model, byte[] compiledCode) throws ModelCheckException {
 		ModelCheckerResult modelCheckerResult = StoreFactory.eINSTANCE.createModelCheckerResult();
 		modelCheckerResult.setValid(true);
 		return modelCheckerResult;

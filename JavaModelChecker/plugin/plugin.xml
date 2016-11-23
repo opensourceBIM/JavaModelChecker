@@ -2,8 +2,20 @@
 <PluginDescriptor>
 	<JavaPlugin>
 		<interfaceClass>org.bimserver.plugins.modelchecker.ModelCheckerPlugin</interfaceClass>
+		<implementationClass>org.bimserver.javamodelchecker.FailAlwaysModelCheckerPlugin</implementationClass>
+		<description>Java Model Checker Plugin</description>
+		<name></name>
+	</JavaPlugin>
+	<JavaPlugin>
+		<interfaceClass>org.bimserver.plugins.modelchecker.ModelCheckerPlugin</interfaceClass>
 		<implementationClass>org.bimserver.javamodelchecker.JavaModelCheckerPlugin</implementationClass>
 		<description>Java Model Checker Plugin</description>
-		
+		<name>Java Model Checker Plugin</name>
+	</JavaPlugin>
+	<JavaPlugin>
+		<interfaceClass>org.bimserver.plugins.modelchecker.ModelCheckerPlugin</interfaceClass>
+		<implementationClass>org.bimserver.javamodelchecker.JavaModelCheckerPlugin</implementationClass>
+		<description>Java Model Checker Plugin</description>
+		<name>Java Model Checker Plugin</name>
 	</JavaPlugin>
 </PluginDescriptor>

@@ -23,9 +23,13 @@ import org.bimserver.models.store.ModelCheckerResult;
 import org.bimserver.models.store.ModelCheckerResultLine;
 import org.bimserver.models.store.ModelCheckerResultType;
 import org.bimserver.models.store.StoreFactory;
+import org.bimserver.plugins.modelchecker.ModelCheckException;
+import org.bimserver.plugins.modelchecker.ModelChecker;
 
-public class WindowWidthChecker implements JavaModelCheckerInterface {
-	public ModelCheckerResult check(IfcModelInterface model) {
+public class WindowWidthChecker implements ModelChecker {
+
+	@Override
+	public ModelCheckerResult check(IfcModelInterface model, byte[] compiledCode) throws ModelCheckException {
 		ModelCheckerResult modelCheckerResult = StoreFactory.eINSTANCE.createModelCheckerResult();
 		modelCheckerResult.setValid(true);
 		for (IfcWindow ifcWindow : model.getAllWithSubTypes(IfcWindow.class)) {
